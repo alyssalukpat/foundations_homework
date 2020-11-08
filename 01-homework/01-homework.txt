@@ -1,0 +1,129 @@
+Hi all!
+
+Here's your homework! It has some Python parts and some command line parts. I know I said don't worry about finishing homework, but you should *definitely* finish the Python parts.
+
+Tons of help is around in the form of TA's, Slack, me, and tips. Please read the entire email first!
+
+## SUBMITTING HOMEWORK
+
+Submit homework through CourseWorks. I rearranged chairs instead of setting it up, but it'll be done by later today.
+
+## SUMMER SURVEY
+
+Please submit this survey if you haven't already: https://forms.gle/ndeUx8Am3r18C5V4A
+
+## PYTHON PARTS
+
+To get your Python skills together, you'll use my tutorial from http://littlecolumns.com/learn/python/ - going up to chapter 13 is probably a good idea.
+
+Inspired by the BBC's "Your life on earth" - http://www.bbc.com/earth/story/20141016-your-life-on-earth - we will be creating a program to analyze the year a user was born in.
+
+Please create a brand new file named homework-01-lastname.py
+The first line should be a comment with your full name
+The second line should be a comment with the date
+The third line should be a comment "Homework 1"
+
+When run from the command line, this file should
+1. Prompt the user for their year of birth, and tell them (approximately):
+2. How old the user is
+3. How many times the user's heart has beaten
+4. How many times a blue whale's heart has beaten
+5. How many times a rabbit's heart has beaten
+6. If the answer to (5) is more than a million, say "XXX million" instead of the very long raw number
+7. How old they are in Venus years
+8. How old they are in Neptune years
+9. Whether they are the same age as you, older or younger
+10. If older or younger, how many years difference
+11. If they were born in an even or odd year
+12. Which US President was in office when they were born (1935 onward)
+
+If someone says they were born in the future, try asking them again (assume they'll do it right the second time).
+
+## TIPS
+
+When you ask a user for information, Python always saves it as a string. But a year as a string isn't very useful! You'll need to convert it to an integer before you do anything to it (there might be some tips in the tutorial to help you with that).
+
+How fast does a blue whale's heart beat? I don't know, I'm not a biologist - Google it!
+
+If you're having trouble thinking about a problem as code, write out what you want to do as steps in words before you try to write the actual Python code.
+
+XXX million will involve either division, rounding, or converting to an integer.
+
+You might need to know about
+  - multiple comparisons in if
+  - adding one to variables (incrementing)
+  - else/elif
+  - modulo (for the even/odd one)
+
+## COMMAND LINE PARTS
+
+Do you like text games or murders or people dying at work or hacking? So many options!
+
+WARNING: A lot of these are going to require you learning new things! If you find it too difficult, don't worry, just try a different exercise. They are (maybe) in order from easiest to most difficult (or most teaching-y to most difficult).
+
+### A text-based adventure game
+
+Go play this!
+
+http://web.mit.edu/mprat/Public/web/Terminus/Web/main.html
+
+### A command-line murder mystery.
+
+Who did it? Unzip the following and cat instructions to see your mission.
+
+https://github.com/veltman/clmystery/archive/master.zip
+
+### Workplace fatalities
+
+This homework contains a file called "OSHA fatalities FY2017.csv". Use this file to answer the following questions. Submit as a plain-text file named homework-01-lastname.txt with both the answers and a list of commands you used to get them.
+
+1. How many accidents are in the file?
+2. I want to know what companies were involved in explosions. Can you search the file to only show falls? 
+3. I would like a file of only 2017 accidents. How many lines is in it?
+4. What command would I use to show me ONLY the first line of the file?
+5. How many accidents involved forklifts? Also, save them to a file.
+6. How many accidents were on Christmas Eve? Also, save them to a file.
+7. I need a text file of accidents that involve trees!
+
+### Hacking!
+
+If you're comfortable with your skills, you might want to give this a try.
+
+https://overthewire.org/wargames/bandit/
+
+## TIPS
+
+You can find notes about using the command line at http://jonathansoma.com/site/lede/foundations-2019. 
+
+There's a ***LOT*** of information we did not talk about in class at http://jonathansoma.com/lede/foundations-2019/terminal/reference/ and http://jonathansoma.com/lede/foundations-2019/terminal/tildes-pipes-and-redirecting-output/ - find help on a command by typing "man [commandname]" or googling (googling is honestly probably better)
+
+A common command we didn't cover is "grep," which searches for stuff. "grep lede Oxford-English-Dictionary.txt" would search the dictionary for "lede" (although it won't give you a good definition!)
+
+The filename for the OSHA data has spaces, which makes command line stuff difficult! Use tab to autocomplete and see what the command line does to deal with spaces.
+
+Watch out, question #1 is a clever trick! Think about lines that might NOT actually be data.
+
+When searching, think about the problem we had with 'Python' and 'python' being different. The key phrase might be 'case insensitive'
+
+You might also need to think about SINGULAR vs PLURAL when searching. Which is best?
+
+To save a new file, you'll want to use 'redirects', which we talk about in one of the links above.
+
+If you run a command, it usually prints out the result. For example, "cat Oxford-English-Dictionary.txt" will print out the entire file. You can also use the neat trick below to count the number of lines in a result: 
+
+  cat Oxford-English-Dictionary.txt | wc -l
+
+The | takes the output of the first command and sends it to the word counter! It's useful when searching, too - the first command below shows you the lines for 'Python' inside of the dictionary, while the second one counts them.
+
+  grep Python Oxford-English-Dictionary.txt
+  grep Python Oxford-English-Dictionary.txt | wc -l
+
+You can use command > filename.txt to save the output of a command to a file. 
+
+  ls -la > files.txt
+
+would save the listing of files into files.txt, and 
+
+  cat blah.txt > result.txt
+
+would take the contents of blah.txt and send them into result.txt.
